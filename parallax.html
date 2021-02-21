@@ -1,0 +1,354 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body, html {
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: black;
+}
+
+body {
+
+padding: 0;
+margin-top: 0;
+min-height: 400vh;
+background-color: #3AAFA9;
+animation: body 1s linear;
+}
+@keyframes body {
+to {
+background-color:  #00cc99;
+}
+}
+
+.progress {
+height: 3px;
+width: 0%;
+background-color: #fff;
+position: relative;
+top: 0;
+left: 0;
+animation: progress 1s linear;
+}
+@keyframes progress {
+to {
+background-color: rgb(20, 255, 226);
+width: 100%;
+}
+}
+
+.cube-wrap {
+z-index: 1;
+--size: 30vmin;
+position: fixed;
+top: 50%;
+left: 50%;
+width: 0;
+height: 0;
+perspective: 100vmin;
+opacity:0.6;
+
+
+}
+.cube {
+
+transform-style: preserve-3d;
+transform: rotateX(0deg) rotateZ(45deg) rotateY(-45deg);
+animation: cube 1s linear;
+}
+@keyframes cube {
+to {
+transform: rotateX(360deg) rotateZ(45deg) rotateY(-45deg);
+}
+}
+
+.side {
+position: absolute;
+width: var(--size);
+height: var(--size);
+background-color: #eee;
+backface-visibility: visible;
+top: calc(var(--size) * -.5);
+left: calc(var(--size) * -.5);
+}
+.top {
+background-color: #fff;
+transform: rotateX(90deg) translateZ(calc(var(--size) * .5));
+}
+.bottom {
+background-color: #999;
+transform: rotateX(90deg) translateZ(calc(var(--size) * -.5));
+}
+.left {
+background-color: #ccc;
+transform: rotateY(90deg) translateZ(calc(var(--size) * .5));
+}
+.right {
+background-color: #ddd;
+transform: rotateY(90deg) translateZ(calc(var(--size) * -.5));
+}
+.front {
+background-color: #aaa;
+transform: translateZ(calc(var(--size) * .5));
+}
+.back {
+background-color: #bbb;
+transform: translateZ(calc(var(--size) * -.5));
+}
+
+:root * {
+/* Pause the animation */
+animation-play-state: paused;
+/* Bind the animation to scroll */
+animation-delay: calc(var(--scroll) * -1s);
+/* These last 2 properites clean up overshoot weirdness */
+animation-iteration-count: 3;
+animation-fill-mode: both;
+}
+
+/* The navigation bar */
+.navbar {
+  z-index:3;
+  overflow: hidden;
+  background-color: black;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%;
+
+   /* Full width */
+
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  color:white;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+
+
+</style>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+</head>
+<body>
+  <div class="navbar">
+    <a href="#home">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="#contact">Contact Us</a>
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+  </div>
+
+  <header class="main-header">
+    <h1><span>Parakh Online</span> Pvt.Ltd</h1>
+    <p>
+    We create solutions to bring utmost ease and transperancy into business management
+    </p>
+  </header>
+
+  <div class="cube-wrap" >
+  <div class="cube">
+
+  <div class="side top"></div>
+  <div class="side bottom"></div>
+  <div class="side front"></div>
+  <div class="side back"></div>
+  <div class="side left"></div>
+  <div class="side right"></div>
+  </div>
+    </div>
+
+  <main class="container">
+    <section class="card">
+      <div>
+      </div>
+    </section><br><br>
+    <section class="card">
+      <div>
+      </div>
+    </section>
+
+    <section class="headings">
+      <div style="text-align:center; margin:0;"> OUR
+    BRANDS</div>
+    </section>
+
+<br><br>
+    <section class="card" data-aos="fade-right">
+      <img src="1.png" alt="" />
+      <div>
+        <h3>ExamPanda</h3>
+        <p>
+          Exam Panda is a brand owned by Parakh Pvt Ltd. that provides a complete exam venue solution for conducting any type of examinations across India
+        </p>
+
+      </div>
+    </section>
+<br><br>
+    <section class="card" data-aos="fade-left">
+      <img src="2.png" alt="" />
+      <div>
+        <h3>BookInfra</h3>
+        <p>
+          BookInfra is developed to give a centralized platform for searching and booking exam venues across India
+        </p>
+        <!--<a href="#" class="btn">Buy Now</a>-->
+      </div>
+    </section>
+<br><br>
+    <section class="card" data-aos="fade-right">
+      <img src="3.png" alt="" />
+      <div>
+        <h3>Testilo</h3>
+        <p>
+      Testilo provides a robust and scalable test engine solution to conduct any type of computer-based web-
+      based or tablet-based exams in a secure environment
+        </p>
+        <!--<a href="#" class="btn">Buy Now</a>-->
+      </div>
+    </section>
+<br><br>
+    <section class="card" data-aos="fade-left">
+      <img src="4.png" alt="" />
+      <div>
+        <h3>EduVue</h3>
+        <p>
+          EduVue is developed to provide complete Institute management solution to the educational institutes
+          that is schools colleges in universities coaching centers and training centers
+        </p>
+        <!--<a href="#" class="btn">Buy Now</a>-->
+      </div>
+    </section>
+<br><br>
+    <section class="card" data-aos="fade-right">
+      <img src="5.png" alt="" />
+      <div>
+        <h3>Learnify</h3>
+        <p>
+          Learnify is brand owned by Parakh Pvt Ltd.
+          That provides skill based and job-based training and certification courses to individuals and helping them move ahead in their careers
+        </p>
+        <!--<a href="#" class="btn">Buy Now</a>-->
+      </div>
+    </section>
+    <br><br>
+        <section class="card" data-aos="fade-right">
+          <img src="6.png" alt="" />
+          <div>
+            <h3>HireHues</h3>
+            <p>
+              HireHues is a human resources solution developed by Parakh Pvt Ltd. that provides skilled invigilators,
+              IT infrastructure managers, and other manpower resources to the exam centers for conducting different type of examinations
+            </p>
+            <!--<a href="#" class="btn">Buy Now</a>-->
+          </div>
+        </section>
+        <section class="headings">
+          <div style="text-align:center; margin:0;"> OUR
+          SOLUTIONS</div>
+        </section>
+
+        <br><br>
+            <section class="sol" >
+              <img src="sol_1.png" alt="" data-aos="fade-up"/>
+              <img src="sol_2.png" alt="" data-aos="fade-up"/>
+            </section>
+            <br><br>
+                <section class="sol" >
+                  <img src="sol_3.png" alt="" data-aos="fade-up" />
+                  <img src="sol_4.png" alt="" data-aos="fade-up"/>
+                </section>
+                <br><br>
+              <section class="sol" >
+                <img src="sol_5.png" alt="" data-aos="fade-up"/>
+                <img src="sol_6.png" alt="" data-aos="fade-up"/>
+              </section>
+              <br><br>
+        <section class="sol" >
+                          <img src="sol_7.png" alt="" data-aos="fade-up"/>
+                          <img src="sol_8.png" alt="" data-aos="fade-up"/>
+                        </section>
+                        <br><br>
+                <section class="sol" >
+                              <img src="9.png" alt="" data-aos="fade-up"/>
+                              <img src="10.png" alt="" data-aos="fade-up"/>
+                            </section>
+                            <br><br>
+
+  </main>
+
+
+  <div id="id01" class="modal" style="z-index:4;position:fixed;">
+
+    <form class="modal-content animate" action="/action_page.php" method="post">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="img_avatar2.jpg" alt="Avatar" class="avatar">
+      </div>
+
+      <div class="containerr">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button type="submit">Login</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+
+      <div class="containerr" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <span class="psw"><a href="#">Sign Up for Free</a></span>
+      </div>
+    </form>
+  </div>
+
+  <script>
+  // Get the modal
+  var modal = document.getElementById('id01');
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+  </script>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+  AOS.init({
+      offset: 200, // offset (in px) from the original trigger point
+      delay: 0, // values from 0 to 3000, with step 50ms
+      duration: 1000 // values from 0 to 3000, with step 50ms
+    });
+  </script>
+  <script>
+    window.addEventListener('scroll', () => {
+  document.body.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+  }, false);
+    </script>
+
+</body>
+</html>
